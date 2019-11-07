@@ -1,5 +1,7 @@
 (function (){
 
+// Criado variaveis que serão utilazadas dependendo da função
+
   var imagens = [];
 
   var cartasViradas = [];
@@ -13,6 +15,9 @@
   var reiniciar = document.querySelector("#reinic");
   reiniciar.addEventListener("click",iniciar);
 
+
+// Preenchendo array imagenns[] com as imagens da pasta img/
+
   for(var i = 0; i < 12;i++){
     var img = {
         src: "img/"+ i + ".jpeg",
@@ -23,6 +28,8 @@
 
 
   iniciar();
+
+    // Funnção que distribui as divs das cartas na  div container
 
     function iniciar(){
        
@@ -60,6 +67,9 @@
           modalFim.style.opacity = 0;
           modalFim.removeEventListener("click",iniciar,false);
     }
+
+
+    //Função que vira a face da carta e compara se as cartas escolhidas são um par
 
     function virarCarta(){
 
@@ -105,6 +115,8 @@
 
     }
 
+    //Função que utiliza a biblioteca Math para embaralhar as posições das cartas
+
     function embaralhar(arrayOrganizado){
         var arrayAleatorio = [];
 
@@ -120,7 +132,7 @@
 
     }
 
-
+    // Função acionada todas as vezes que o jogador acertar a combinação de um par
     function sinalAcerto(){
       imgAcerto.style.zIndex = 1;
       imgAcerto.style.top = 150  + "px";
@@ -136,6 +148,7 @@
     }
 
 
+    //  Função utilizada quando o jogador combinar todos os pares corretamente
     function parabens(){
       modalFim.style.zIndex = 10;
       modalFim.style.opacity = 1;
